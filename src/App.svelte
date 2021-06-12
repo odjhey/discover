@@ -5,8 +5,8 @@
         {
             name: "Discover",
             desc: "this",
-            url: { label: "odee.io", url: "odee.io" },
-            repo: { label: "discover/github", url: "odee.io" },
+            url: { label: "odee.io", url: "http://discover.apps.odee.io/" },
+            repo: { label: "discover/github", url: "http://odee.io" },
             tags: "svelte",
         },
         {
@@ -24,14 +24,14 @@
         },
         {
             name: "node-bare",
-            desc: "simple express",
+            desc: "simple express, mostly used to test pings and installations",
             url: {
-                label: "",
-                url: "",
+                label: "hello-world",
+                url: "http://node-www-dockerized-hello-world.apps.odee.io/",
             },
             repo: {
-                label: "",
-                url: "",
+                label: "github",
+                url: "https://github.com/odjhey/node-www-dockerized-hello-world",
             },
             tags: "nodejs, express",
         },
@@ -49,19 +49,25 @@
         <tr>
             <th>Service Name</th>
             <th>Description</th>
-            <th>Url</th>
             <th>Repo</th>
+            <th>Url</th>
             <th>Tags</th>
         </tr>
         {#each services as service}
             <tr>
                 <td>{service.name}</td>
-                <td style="min-width: 15em;">{service.desc}</td>
-                <td style="min-width: 10em;"
-                    ><a href={service.url.url}>{service.url.label}</a></td
+                <td style="min-width: 15em;max-width:15em;word-wrap:break-word;"
+                    >{service.desc}</td
                 >
                 <td style="min-width: 10em;"
-                    ><a href={service.repo.url}>{service.repo.label}</a></td
+                    ><a href={service.repo.url} target="_blank"
+                        >{service.repo.label}</a
+                    ></td
+                >
+                <td style="min-width: 10em;"
+                    ><a href={service.url.url} target="_blank"
+                        >{service.url.label}</a
+                    ></td
                 >
                 <td>{service.tags}</td>
             </tr>
@@ -90,6 +96,8 @@
 
     td {
         padding-top: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     .center {
