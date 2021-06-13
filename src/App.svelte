@@ -3,13 +3,6 @@
 
     const services = [
         {
-            name: "Discover",
-            desc: "this",
-            url: { label: "odee.io", url: "http://discover.apps.odee.io/" },
-            repo: { label: "discover/github", url: "http://odee.io" },
-            tags: "svelte",
-        },
-        {
             name: "go-api",
             desc: "try-go",
             url: {
@@ -34,6 +27,16 @@
                 url: "https://github.com/odjhey/node-www-dockerized-hello-world",
             },
             tags: "nodejs, express",
+        },
+        {
+            name: "Discover",
+            desc: "this",
+            url: { label: "this", url: "http://discover.apps.odee.io/" },
+            repo: {
+                label: "discover/github",
+                url: "https://github.com/odjhey/discover",
+            },
+            tags: "svelte",
         },
     ];
 </script>
