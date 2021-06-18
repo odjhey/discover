@@ -62,10 +62,7 @@
             {#each services as service}
                 <tr>
                     <td>{service.name}</td>
-                    <td
-                        style="min-width: 15em;max-width:15em;word-wrap:break-word;"
-                        >{service.desc}</td
-                    >
+                    <td class="col-desc">{service.desc}</td>
                     <td style="min-width: 10em;"
                         ><a href={service.repo.url} target="_blank"
                             >{service.repo.label}</a
@@ -84,10 +81,15 @@
 </main>
 
 <style>
+    .col-desc {
+        max-width: 20em;
+        min-width: 15em;
+        word-wrap: break-word;
+    }
     .header {
         text-align: center;
         padding: 1em;
-        max-width: 240px;
+        max-width: 460px;
         margin: 0 auto;
     }
 
@@ -98,14 +100,14 @@
         font-weight: 100;
     }
 
-    th {
-        border-bottom: 1px #bcbcbc solid;
+    td {
+        vertical-align: top;
+        border-bottom: 1px #dcdcdc solid;
+        padding-bottom: 1em;
     }
 
-    td {
-        padding-top: 1em;
-        padding-left: 1em;
-        padding-right: 1em;
+    th {
+        border-bottom: 1px #bcbcbc solid;
     }
 
     .center {
@@ -116,6 +118,12 @@
     @media (min-width: 640px) {
         .header {
             max-width: none;
+        }
+        td {
+            padding-top: 1em;
+            padding-left: 1em;
+            padding-right: 1em;
+            border-bottom: none;
         }
     }
 </style>
