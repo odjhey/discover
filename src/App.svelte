@@ -42,44 +42,49 @@
 </script>
 
 <main>
-    <h1>Hello {name}!</h1>
-    <p>
-        List of growing deployed services, most are useless as they are only
-        built to aid learning.
-    </p>
-    <hr style="height: 2em; border-width:0;" />
-    <table class="center">
-        <tr>
-            <th>Service Name</th>
-            <th>Description</th>
-            <th>Repo</th>
-            <th>Url</th>
-            <th>Tags</th>
-        </tr>
-        {#each services as service}
+    <div class="header">
+        <h1>Hello {name}!</h1>
+        <p>
+            List of growing deployed services, most are useless as they are only
+            built to aid learning.
+        </p>
+        <hr style="height: 2em; border-width:0;" />
+    </div>
+    <div style="overflow-x:auto;">
+        <table class="center">
             <tr>
-                <td>{service.name}</td>
-                <td style="min-width: 15em;max-width:15em;word-wrap:break-word;"
-                    >{service.desc}</td
-                >
-                <td style="min-width: 10em;"
-                    ><a href={service.repo.url} target="_blank"
-                        >{service.repo.label}</a
-                    ></td
-                >
-                <td style="min-width: 10em;"
-                    ><a href={service.url.url} target="_blank"
-                        >{service.url.label}</a
-                    ></td
-                >
-                <td>{service.tags}</td>
+                <th>Service</th>
+                <th>Description</th>
+                <th>Repo</th>
+                <th>Url</th>
+                <th>Tags</th>
             </tr>
-        {/each}
-    </table>
+            {#each services as service}
+                <tr>
+                    <td>{service.name}</td>
+                    <td
+                        style="min-width: 15em;max-width:15em;word-wrap:break-word;"
+                        >{service.desc}</td
+                    >
+                    <td style="min-width: 10em;"
+                        ><a href={service.repo.url} target="_blank"
+                            >{service.repo.label}</a
+                        ></td
+                    >
+                    <td style="min-width: 10em;"
+                        ><a href={service.url.url} target="_blank"
+                            >{service.url.label}</a
+                        ></td
+                    >
+                    <td>{service.tags}</td>
+                </tr>
+            {/each}
+        </table>
+    </div>
 </main>
 
 <style>
-    main {
+    .header {
         text-align: center;
         padding: 1em;
         max-width: 240px;
@@ -109,7 +114,7 @@
     }
 
     @media (min-width: 640px) {
-        main {
+        .header {
             max-width: none;
         }
     }
