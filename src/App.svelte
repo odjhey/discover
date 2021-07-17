@@ -38,6 +38,16 @@
             },
             tags: "svelte",
         },
+        {
+            name: "elixir-api",
+            desc: "play with elixir",
+            url: { label: "elix-api", url: "http://elix-webhook-pp.apps.odee.io/" },
+            repo: {
+                label: "github",
+                url: "https://github.com/odjhey/elix_webhook_processor",
+            },
+            tags: "elixir, plug, cowboy, poison",
+        },
     ];
 </script>
 
