@@ -48,6 +48,16 @@
             },
             tags: "elixir, plug, cowboy, poison",
         },
+        {
+            name: "deno-serverless-function",
+            desc: "sample deno fn serverless running in vercel",
+            url: { label: "vercel function", url: "https://loona-card.vercel.app/" },
+            repo: {
+                label: "github",
+                url: "https://github.com/odjhey/loona-card",
+            },
+            tags: "deno, vercel function, serverless, svg",
+        },
     ];
 </script>
 
